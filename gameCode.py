@@ -27,7 +27,9 @@ clockSecond = driver.find_element(By.XPATH, value= "/html/body/div/div/div/div[3
 
 # Create Loop to play the game
 # While ClockMinute >0 and ClockSecond > 0
-while clockMinute.text != "0" and clockSecond.text != "0":
+while int(clockMinute.text) * 60 + int(clockSecond.text) > 0:
+    # print remaining Time
+    print(clockMinute.text + ":" + clockSecond.text)
     # Click the heads button after waiting for the overlay to disappear
     # Wait until the overlay is no longer present
     wait.until(EC.invisibility_of_element((By.XPATH, '/html/body/div/div/div/div[2]/div')))
