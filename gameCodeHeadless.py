@@ -54,3 +54,8 @@ while int(clockMinute.text) * 60 + int(clockSecond.text) > 0:
     clockMinute = driver.find_element(By.XPATH, value= "/html/body/div/div/div/div[3]/div[1]/span[1]")
     clockSecond = driver.find_element(By.XPATH, value= "/html/body/div/div/div/div[3]/div[1]/span[2]")
 
+# wait for 10 seconds
+time.sleep(10)
+
+# screenshot the page, name it screenshot + date and time
+driver.save_screenshot("screenshot_" + time.strftime("%Y%m%d-%H%M") + ".png")
